@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label>Môn Toán: </label> <input id="Toan"><br>
+        <label>Môn Văn: </label><input  id="Van"><br>
+        <label>Môn Anh: </label><input  id="Anh"><br>
+        <label>Khu vực: </label><select name="  " id="KhuVuc">
+            <option value="KV1">KV1</option>
+            <option value="KV2-NT">KV2-NT</option>
+            <option value="KV2">KV2</option>
+            <option value="KV3">KV3</option>
+        </select>
+        <button id="btn">Tính điểm</button>
+        </form>
+            <script>
+                document.getElementById("btn").onclick = function () {
+                let KV = document.getElementById("KhuVuc").value;
+                var T = parseFloat(document.getElementById("Toan").value);
+                var V =parseFloat(document.getElementById("Van").value);
+                var A =parseFloat(document.getElementById("Anh").value);
+                switch (KV) {
+                    case "KV1":
+                        alert("Tổng điểm khối D của bạn là:"+ (T + V + A + 0.75));
+                        break;
+                    case "KV2-NT":
+                    alert("Tổng điểm khối D của bạn là:"+ (T + V + A + 0.5));
+                        break;
+                    case "KV2":
+                    alert("Tổng điểm khối D của bạn là:"+ (T + V + A + 0.25) ); ;
+                        break;
+                    default: 
+                    alert("Tổng điểm khối D của bạn là:"+ (T + V + A) );
+        
+                }
+            }
+</script>
+
+
+</body>
+</html>
