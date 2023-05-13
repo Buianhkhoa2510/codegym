@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button id="btn">Chơi</button> 
+   <script>
+    document.getElementById("btn").onclick = function () {
+   let maxNumber = parseInt(prompt("Enter max number: "));
+   let i = Math.floor(Math.random() * (maxNumber) ) ;
+  
+for (let turn = 1; turn <= 3; turn++) {
+    let choicedNumber = parseInt(prompt("Enter choiced number: "));
+    if (choicedNumber = i) {
+        alert("Bạn đã thắng")
+        break;
+    } else 
+    {
+      alert("Ban da Thua")  
+    }
+
+}
+
+    } 
+</script>
+
+</body>
+</html>
