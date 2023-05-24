@@ -8,21 +8,24 @@
 </head>
 <body>
     <script>
-    let number = parseInt(prompt("Nhap so luong snt can in ra:"));
-    for (let count = 0; count < number; count++) {
-        let N;
-        let laSNT = true;
-        if (N < 2) laSNT = false;
-        for (i = 2; i < (N - 1); i++) {
-        if (N % i == 0) {
-        laSNT = false
-        break;
-    }
-}
-if (laSNT) document.write(N + " ")
-else N = N+1
-    };
-
+var number = parseInt(prompt("Nhap so luong snt can in ra:"));
+        var N = 2;
+        var text = "";
+        for (var count = 0; count < number;) {
+            var laSNT = true;
+            for (i = 2; i < (N - 1); i++) {
+                if (N % i == 0) {
+                    laSNT = false;
+                    break;
+                }
+            }
+            if (laSNT) {
+                text += N + " ";
+                count++
+            }
+            N++;
+        };
+        document.write(text);
     </script>
 </body>
 </html>
