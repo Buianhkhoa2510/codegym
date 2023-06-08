@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400px" height="300px" style="border: 1px solid black;"></canvas>
+    <canvas id="circleCanvas" width="400px" height="300px" style="border: 1px solid black;"></canvas>
+    <canvas id="rectCanvas" width="400px" height="300px" style="border: 1px solid black;"></canvas>
+
+    <script>
+let canvas = document.getElementById("myCanvas")
+let ctx = canvas.getContext("2d")
+ctx.strokeStyle = "red" // màu
+ctx.lineWidth = 10 // độ rộng đường kẻ
+ctx.moveTo(100, 50) // điểm bắt đầu
+ctx.lineTo(100, 200) // điểm kết thúc
+ctx.lineTo(200, 200)
+ctx.stroke(); //hiển thị
+
+let circleCanvas = document.getElementById("circleCanvas")
+let circleCtx = circleCanvas.getContext("2d")
+circleCtx.strokeStyle = "red"
+circleCtx.lineWidth = 10
+circleCtx.beginPath()
+circleCtx.arc(200, 150, 70, 0, 2 * Math.PI)
+circleCtx.fillStyle = "#66FF99"
+circleCtx.fill()
+circleCtx.stroke()
+
+let rectCanvas = document.getElementById("rectCanvas")
+let rectCtx = rectCanvas.getContext("2d")
+rectCtx.fillStyle = "#66FF99"
+rectCtx.fillRect(0, 0, 200, 150)
+
+
+
+    </script>
+</body>
+</html>

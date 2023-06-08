@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// sử dụng cu pháp khởi tạo
+// let myCar1 = new Object()
+// myCar1.made = 'Mazda';
+// myCar1.model= '3';
+// myCar1.year= 2021;
+
+// let myCar = {
+// made: 'Mazda',
+// model: '3',
+// year: 2021
+// }
+// console.log(myCar)
+// myCar.year = 2023
+// console.log(myCar)
+// function changeValue(car){
+// car.made = 'Ford'
+// }
+// changeValue(myCar)
+
+
+// Khoi tao bang function
+// function Car(_made, _model, _year) {
+//     this.made = _made;
+//     this.model = _model;
+//     this.year = _year
+// }
+// let myCar3 = new Car('toyo', '5', 2023)
+// console.log(myCar3)
+// console.log(typeof Car);
+
+
+//Khoi tao bang class
+class Student {
+constructor(_name, _age){
+    this.name = _name;
+    this.age = _age;
+}
+goToSchool(){
+console.log('student ' + this.name + ' go to school')
+}
+}
+
+let student_1 = new Student("Linh", 26)
+student_1.goToSchool()
+    </script>
+
+</body>
+</html>
