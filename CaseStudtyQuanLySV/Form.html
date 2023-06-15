@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng ký thông tin</title>
+    <style>
+      form {
+        display: flex;
+        justify-content: center;
+      }
+
+      fieldset {
+        border: none;
+      }
+
+      legend {
+        position: relative;
+        color: black;
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+
+      legend::after {
+        display: block;
+        content: "";
+        width: 750px;
+        height: 2px;
+        background-color: #e5e5e5;
+        position: absolute;
+        margin-top: 10px;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto 400px;
+        gap: 20px 20px;
+      }
+
+      .grid-item {
+        box-sizing: border-box;
+      }
+
+      .select-layout {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .select-layout > select {
+        width: 120px;
+      }
+
+      .radio-layout {
+        display: grid;
+        grid-template-columns: 15px 40px 15px 40px;
+        gap: 10px 10px;
+        align-items: center;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 2px solid rgb(189, 188, 188);
+        border-radius: 5px;
+      }
+
+      input,
+      select {
+        height: 40px;
+      }
+
+      sup {
+        color: red;
+      }
+
+      #graduated_year {
+        width: 100px;
+      }
+
+      button {
+        position: relative;
+        margin-top: 60px;
+        margin-left: 316px;
+        background-color: red;
+        border: 1px solid red;
+        border-radius: 5px;
+        width: 100px;
+        height: 40px;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      button::before {
+        display: block;
+        margin-left: -325px;
+        content: "";
+        width: 750px;
+        height: 2px;
+        background-color: #e5e5e5;
+        position: absolute;
+        bottom: 70px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form
+      action="https://www.google.com.vn/"
+      method="post"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <fieldset>
+        <legend>Đăng ký thông tin</legend>
+        <div class="grid-container">
+          <label class="grid-item" for="name"
+            >Họ và tên học viên (ghi đầy đủ dấu tiếng Việt)<sup>*</sup></label
+          >
+          <input class="grid-item" type="text" id="name" required />
+          <label class="grid-item" for="identity">CMND<sup>*</sup></label>
+          <input class="grid-item" type="text" id="identity" required />
+          <label class="grid-item" for="dob">Ngày sinh<sup>*</sup></label>
+          <div class="grid-item select-layout">
+            <select name="date" id="dob" required>
+              <option value="">Ngày</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <select name="month" required>
+              <option value="">Tháng</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <select name="year" required>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+            </select>
+          </div>
+          <label class="grid-item" for="gender">Giới tính<sup>*</sup></label>
+          <div class="grid-item radio-layout" id="gender">
+            <input type="radio" name="gender" id="male" value="male" />
+            <label for="male">Nam</label>
+            <input type="radio" name="gender" id="female" value="female" />
+            <label for="female">Nữ</label>
+          </div>
+          <label class="grid-item" for="telephone"
+            >Điện thoại liên lạc<sup>*</sup></label>
+          <input class="grid-item" type="tel" id="telephone" />
+          <label class="grid-item" for="city">Tỉnh/Thành phố lớp 12</label>
+          <select class="grid-item" name="city" id="city">
+            <option value="HCM" selected>Thành phố Hồ Chí Minh</option>
+            <option value="HN">Thành phố Hà Nội</option>
+            <option value="DN">Thành phố Đà Nẵng</option>
+          </select>
+          <label class="grid-item" for="district">Quận/Huyện lớp 12</label>
+          <select class="grid-item" name="district" id="district">
+            <option value="Q1" selected>Quận 1</option>
+            <option value="Q2">Quận 2</option>
+            <option value="Q9">Quận 9</option>
+            <option value="Q12">Quận 12</option>
+          </select>
+          <label class="grid-item" for="school">Quận/Huyện lớp 12</label>
+          <label class="grid-item" for="graduated_year">Năm tốt nghiệp</label>
+      </fieldset>
+    </form>
+  </body>
+</html>
