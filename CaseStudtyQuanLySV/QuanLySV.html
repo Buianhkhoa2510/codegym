@@ -9,21 +9,24 @@
 <body>
 <table>
     <tr>
-        <th>Quản lý sinh viên lớp Ban Mai</th>
-        <th><button>Add</button></th>
+        <th>Quản lý học viên lớp Ban Mai</th>
+        <td>Sĩ số lớp: </td>
+        <td id="sum"> </td>
+        <th><button id="btnAdd" onclick="clickBtnAdd()">Add</button></th>
     </tr>
 </table>
     <table border="1">
         <tr>
-            <th>STT</th>
-            <th>Họ tên</th>
+            <th>TT</th>
+            <th>Họ và tên</th>
             <th>Ngày sinh</th>
             <th>Giới tính</th>
-            <th>Quê quán</th>
-            <th>Ngày nhập học</th>
+            <th>Địa chỉ</th>
             <th>Họ tên phụ huynh</th>
             <th>SĐT phụ huynh</th>
-            <th>Sửa/Xoá</th>
+            <th>Ghi chú</th>
+            <th>Sửa</th>
+            <th>Xoá</th>
         </tr>
         <tr>
             <td></td>
@@ -35,5 +38,10 @@
             <td></td>
         </tr>
     </table>
+    <script>
+function clickBtnAdd() {
+    window.location.href="http://127.0.0.1:5500/CaseStudtyQuanLySV/Form.html"
+}
+    </script>
 </body>
 </html>

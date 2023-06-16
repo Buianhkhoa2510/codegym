@@ -111,14 +111,12 @@
       enctype="application/x-www-form-urlencoded"
     >
       <fieldset>
-        <legend>Đăng ký thông tin</legend>
+        <legend>Nhập thông tin</legend>
         <div class="grid-container">
           <label class="grid-item" for="name"
             >Họ và tên học viên (ghi đầy đủ dấu tiếng Việt)<sup>*</sup></label
           >
           <input class="grid-item" type="text" id="name" required />
-          <label class="grid-item" for="identity">CMND<sup>*</sup></label>
-          <input class="grid-item" type="text" id="identity" required />
           <label class="grid-item" for="dob">Ngày sinh<sup>*</sup></label>
           <div class="grid-item select-layout">
             <select name="date" id="dob" required>
@@ -163,24 +161,15 @@
             <input type="radio" name="gender" id="female" value="female" />
             <label for="female">Nữ</label>
           </div>
-          <label class="grid-item" for="telephone"
-            >Điện thoại liên lạc<sup>*</sup></label>
-          <input class="grid-item" type="tel" id="telephone" />
-          <label class="grid-item" for="city">Tỉnh/Thành phố lớp 12</label>
-          <select class="grid-item" name="city" id="city">
-            <option value="HCM" selected>Thành phố Hồ Chí Minh</option>
-            <option value="HN">Thành phố Hà Nội</option>
-            <option value="DN">Thành phố Đà Nẵng</option>
-          </select>
-          <label class="grid-item" for="district">Quận/Huyện lớp 12</label>
-          <select class="grid-item" name="district" id="district">
-            <option value="Q1" selected>Quận 1</option>
-            <option value="Q2">Quận 2</option>
-            <option value="Q9">Quận 9</option>
-            <option value="Q12">Quận 12</option>
-          </select>
-          <label class="grid-item" for="school">Quận/Huyện lớp 12</label>
-          <label class="grid-item" for="graduated_year">Năm tốt nghiệp</label>
+          <label class="grid-item" for="Address">Địa chỉ<sup>*</sup></label>
+          <input class="grid-item" type="text" id="Address" required />
+          <label class="grid-item" for="parents">Họ tên phụ huynh<sup>*</sup></label>
+          <input class="grid-item" type="text" id="parents" required />
+          <label class="grid-item" for="phone"
+            >SĐT phụ huynh<sup>*</sup></label>
+          <input class="grid-item" type="tel" id="phone" />
+          <label class="grid-item" for="note">Ghi chú</label>
+          <input class="grid-item" type="text" id="note" required />
       </fieldset>
     </form>
   </body>
