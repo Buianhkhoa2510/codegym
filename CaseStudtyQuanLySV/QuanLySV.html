@@ -5,43 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="Student.js"></script>
+    <script src="LopBanMai.js"></script>
 </head>
 <body>
 <table>
     <tr>
         <th>Quản lý học viên lớp Ban Mai</th>
-        <td>Sĩ số lớp: </td>
-        <td id="sum"> </td>
-        <th><button id="btnAdd" onclick="clickBtnAdd()">Add</button></th>
+        <td>Sĩ số lớp:  </td>
+        <td id="sum"></td>
+        <th>
+            <button id="btnAdd" onclick="clickBtnAdd()">Add</button>
+        </th>
     </tr>
 </table>
-    <table border="1">
-        <tr>
-            <th>TT</th>
-            <th>Họ và tên</th>
-            <th>Ngày sinh</th>
-            <th>Giới tính</th>
-            <th>Địa chỉ</th>
-            <th>Họ tên phụ huynh</th>
-            <th>SĐT phụ huynh</th>
-            <th>Ghi chú</th>
-            <th>Sửa</th>
-            <th>Xoá</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-    <script>
-function clickBtnAdd() {
-    window.location.href="http://127.0.0.1:5500/CaseStudtyQuanLySV/Form.html"
-}
-    </script>
+<table border="1">
+    <thead>
+    <th>TT</th>
+    <th>Họ và tên</th>
+    <th>Ngày sinh</th>
+    <th>Giới tính</th>
+    <th>Địa chỉ</th>
+    <th>Họ tên phụ huynh</th>
+    <th>SĐT phụ huynh</th>
+    <th>Ghi chú</th>
+    <th>Sửa</th>
+    <th>Xoá</th>
+    </thead>
+    <tbody id="data"></tbody>
+</table>
+<script>
+    let lopBanMai = new LopBanMai()
+    lopBanMai.addStudent(new Student("no1", "name1", "dob1", "male1", "address1", "parents1", "phone1", "note1"))
+    lopBanMai.addStudent(new Student("no1", "name1", "dob1", "male1", "address1", "parents1", "phone1", "note1"))
+    lopBanMai.addStudent(new Student("no1", "name1", "dob1", "male1", "address1", "parents1", "phone1", "note1"))
+    lopBanMai.addStudent(new Student("no1", "name1", "dob1", "male1", "address1", "parents1", "phone1", "note1"))
+    lopBanMai.addStudent(new Student("no1", "name1", "dob1", "male1", "address1", "parents1", "phone1", "note1"))
+    lopBanMai.addStudent(new Student("no1", "name1", "dob1", "male1", "address1", "parents1", "phone1", "note1"))
+    lopBanMai.addStudent(new Student("no1", "name1", "dob1", "male1", "address1", "parents1", "phone1", "note1"))
+    lopBanMai.addStudent(new Student("no1", "name1", "dob1", "male1", "address1", "parents1", "phone1", "note1"))
+    show()
+    function clickBtnAdd() {
+        window.location.href = "Form.html"
+    }
+
+    function show() {
+        let students = lopBanMai.getStudents()
+        let str = "";
+        for (let i = 0; i < students.length; i++) {
+            str += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${students[i].name}</td>
+                <td>${students[i].dob}</td>
+                <td>${students[i].gender}</td>
+                <td>${students[i].address}</td>
+                <td>${students[i].parents}</td>
+                <td>${students[i].phone}</td>
+                <td>${students[i].note}</td>
+                <td><button type="button" onclick="edit()">Edit</button></td>
+                <td><button type="button" onclick="delete()">Delete</button></td>
+            </tr>
+            `
+        }
+        document.getElementById("data").innerHTML = str
+        document.getElementById("sum").innerText = students.length
+    }
+
+</script>
 </body>
 </html>

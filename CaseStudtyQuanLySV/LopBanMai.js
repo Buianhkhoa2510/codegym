@@ -1,17 +1,17 @@
 class LopBanMai {
-    constructor(student) {
-        this.student = student
+    constructor() {
+        this.students = []
     }
-    getStudent() {
-        return this.student
+    getStudents() {
+        return this.students
     }
-    setStudent() {
-        student = this.student
+    setStudents() {
+        this.students = this.students
     }
-    addStudent() {
-student += this.student
+    addStudent(student) {
+        this.students.push(student)
     }
-    deleteStudent() {
-student -=this.student
-    }
+    // deleteStudent(student) {
+    //
+    // }
 }
