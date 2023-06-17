@@ -113,6 +113,10 @@
       <fieldset>
         <legend>Nhập thông tin</legend>
         <div class="grid-container">
+          <label class="grid-item" for="code"
+            >Mã sinh viên<sup>*</sup></label
+          >
+          <input class="grid-item" type="number" id="code" required />
           <label class="grid-item" for="name"
             >Họ và tên học viên (ghi đầy đủ dấu tiếng Việt)<sup>*</sup></label
           >
@@ -170,7 +174,13 @@
           <input class="grid-item" type="tel" id="phone" />
           <label class="grid-item" for="note">Ghi chú</label>
           <input class="grid-item" type="text" id="note" required />
+          <button type="submit">Submit</button>
       </fieldset>
     </form>
+    <script src="/CaseStudtyQuanLySV/Student.js"></script>
+    <script>
+        let student = new student();
+  
+    </script>
   </body>
 </html>

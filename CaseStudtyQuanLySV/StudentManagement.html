@@ -17,7 +17,7 @@
 </table>
     <table border="1">
         <tr>
-            <th>TT</th>
+            <th>Mã số</th>
             <th>Họ và tên</th>
             <th>Ngày sinh</th>
             <th>Giới tính</th>
@@ -38,6 +38,28 @@
             <td></td>
         </tr>
     </table>
+    <script src="/CaseStudtyQuanLySV/BanMaiClass.js"></script>
+    <script src="/CaseStudtyQuanLySV/Student.js"></script>
+    <script>
+        let banMaiClass = new BanMaiClass();
+        let adam = new Human('Adam', true, 70);
+        let eva = new Human('Eva', false, 50)
+        adam.say("Hello");
+      do {
+        adam.eat(apple);
+        eva.eat(apple);
+        console.log(adam.weight);
+        console.log(eva.weight);
+        console.log(apple.weight);
+      } while (apple.weight > 0);
+      console.log(adam.weight);
+        console.log(eva.weight);
+        console.log(apple.weight);
+        for (let index = 0; index < array.length; index++) {
+          const element = array[index];
+          
+        }
+    </script>
     <script>
 function clickBtnAdd() {
     window.location.href="http://127.0.0.1:5500/CaseStudtyQuanLySV/Form.html"
