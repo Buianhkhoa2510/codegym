@@ -1,223 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Student.js"></script>
     <script src="BanMaiClass.js"></script>
     <title>Đăng ký thông tin</title>
     <style>
-      form {
-        display: flex;
-        justify-content: center;
-      }
+        form {
+            display: flex;
+            justify-content: center;
+        }
 
-      fieldset {
-        border: none;
-      }
+        fieldset {
+            border: none;
+        }
 
-      legend {
-        position: relative;
-        color: black;
-        font-size: 30px;
-        margin-bottom: 30px;
-      }
+        legend {
+            position: relative;
+            color: black;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
 
-      legend::after {
-        display: block;
-        content: "";
-        width: 750px;
-        height: 2px;
-        background-color: #e5e5e5;
-        position: absolute;
-        margin-top: 10px;
-      }
+        legend::after {
+            display: block;
+            content: "";
+            width: 750px;
+            height: 2px;
+            background-color: #e5e5e5;
+            position: absolute;
+            margin-top: 10px;
+        }
 
-      .grid-container {
-        display: grid;
-        grid-template-columns: auto 400px;
-        gap: 20px 20px;
-      }
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto 400px;
+            gap: 20px 20px;
+        }
 
-      .grid-item {
-        box-sizing: border-box;
-      }
+        .grid-item {
+            box-sizing: border-box;
+        }
 
-      .select-layout {
-        display: flex;
-        justify-content: space-between;
-      }
+        .select-layout {
+            display: flex;
+            justify-content: space-between;
+        }
 
-      .select-layout > select {
-        width: 120px;
-      }
+        .select-layout > select {
+            width: 120px;
+        }
 
-      .radio-layout {
-        display: grid;
-        grid-template-columns: 15px 40px 15px 40px;
-        gap: 10px 10px;
-        align-items: center;
-      }
+        .radio-layout {
+            display: grid;
+            grid-template-columns: 15px 40px 15px 40px;
+            gap: 10px 10px;
+            align-items: center;
+        }
 
-      input,
-      select,
-      textarea {
-        width: 100%;
-        border: 2px solid rgb(189, 188, 188);
-        border-radius: 5px;
-      }
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 2px solid rgb(189, 188, 188);
+            border-radius: 5px;
+        }
 
-      input,
-      select {
-        height: 40px;
-      }
+        input,
+        select {
+            height: 40px;
+        }
 
-      sup {
-        color: red;
-      }
+        sup {
+            color: red;
+        }
 
-      #graduated_year {
-        width: 100px;
-      }
+        #graduated_year {
+            width: 100px;
+        }
 
-      button {
-        position: relative;
-        margin-top: 60px;
-        margin-left: 316px;
-        background-color: red;
-        border: 1px solid red;
-        border-radius: 5px;
-        width: 100px;
-        height: 40px;
-        color: white;
-        text-align: center;
-        text-transform: uppercase;
-      }
+        button {
+            position: relative;
+            margin-top: 60px;
+            margin-left: 316px;
+            background-color: red;
+            border: 1px solid red;
+            border-radius: 5px;
+            width: 100px;
+            height: 40px;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+        }
 
-      button::before {
-        display: block;
-        margin-left: -325px;
-        content: "";
-        width: 750px;
-        height: 2px;
-        background-color: #e5e5e5;
-        position: absolute;
-        bottom: 70px;
-      }
+        button::before {
+            display: block;
+            margin-left: -325px;
+            content: "";
+            width: 750px;
+            height: 2px;
+            background-color: #e5e5e5;
+            position: absolute;
+            bottom: 70px;
+        }
     </style>
-  </head>
+    <script src="const.js"></script>
+</head>
 
-  <body>
-    <form>
-      <fieldset>
+<body>
+<form>
+    <fieldset>
         <legend>Nhập thông tin</legend>
         <div class="grid-container">
-          <label class="grid-item" for="name"
+            <label class="grid-item" for="name"
             >Họ và tên học viên (ghi đầy đủ dấu tiếng Việt)<sup>*</sup></label
-          >
-          <input class="grid-item" type="text" id="name" required />
-          <label class="grid-item" for="dob">Ngày sinh<sup>*</sup></label>
-          <div class="grid-item select-layout">
-            <select title="Ngày" name="date" id="dob" required>
-              <option value="">Ngày</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-            </select>
-            <select title="Tháng" name="month" id="mob" required>
-              <option value="">Tháng</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-            </select>
-            <select title="Năm" name="year" id="yob" required>
-              <option value="">Năm</option>
-              <option value="2021">2021</option>
-              <option value="2020">2020</option>
-            </select>
-          </div>
-          <label class="grid-item" for="gender">Giới tính<sup>*</sup></label>
-          <div class="grid-item radio-layout" id="gender">
-            <input type="radio" name="gender" id="male" value="male" />
-            <label for="male">Nam</label>
-            <input type="radio" name="gender" id="female" value="female" />
-            <label for="female">Nữ</label>
-          </div>
-          <label class="grid-item" for="address">Địa chỉ<sup>*</sup></label>
-          <input class="grid-item" type="text" id="address" required />
-          <label class="grid-item" for="parents">Họ tên phụ huynh<sup>*</sup></label>
-          <input class="grid-item" type="text" id="parents" required />
-          <label class="grid-item" for="phone"
-            >SĐT phụ huynh<sup>*</sup></label>
-          <input class="grid-item" type="tel" id="phone" />
-          <label class="grid-item" for="note">Ghi chú</label>
-          <input class="grid-item" type="text" id="note" />
-          <button type="submit" onclick="clickBtSubmit()">Submit</button>
-      </fieldset>
-    </form>
-  <script>
-    function clickBtSubmit() {
-if (
-  document.getElementById("name").value === ""  &&
-  document.getElementById("name").value === "" && 
-  document.getElementById("address").value === "" &&
-  document.getElementById("parents").value === " " &&
-  document.getElementById("phone").value === "" 
-) {
-  alert("Hãy nhập họ tên")
-} else {
-      var dob = document.getElementById("dob").value + "/" + document.getElementById("mob").value + "/" + document.getElementById("yob").value
-      var name = document.getElementById("name").value
-      var gender = document.getElementsByName("gender").value
-      var address = document.getElementById("address").value
-      var parents = document.getElementById("parents").value
-      var phone = document.getElementById("phone").value
-      var note = document.getElementById("note").value
-      let student = new Student(name, dob, gender, address, parents, phone, note);
-      localStorage.setItem('listStudents', JSON.stringify(student));
-      alert('Register successfully');
-      window.close()
-    }
-  }
+            >
+            <input class="grid-item" type="text" id="name" required/>
+            <label class="grid-item" for="dob">Ngày sinh<sup>*</sup></label>
+            <div class="grid-item select-layout">
+                <select title="Ngày" name="date" id="dob" required>
+                    <option value="">Ngày</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                <select title="Tháng" name="month" id="mob" required>
+                    <option value="">Tháng</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select title="Năm" name="year" id="yob" required>
+                    <option value="">Năm</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select>
+            </div>
+            <label class="grid-item" for="gender">Giới tính<sup>*</sup></label>
+            <div class="grid-item radio-layout" id="gender">
+                <input type="radio" name="gender" id="male" value="male"/>
+                <label for="male">Nam</label>
+                <input type="radio" name="gender" id="female" value="female"/>
+                <label for="female">Nữ</label>
+            </div>
+            <label class="grid-item" for="address">Địa chỉ<sup>*</sup></label>
+            <input class="grid-item" type="text" id="address" required/>
+            <label class="grid-item" for="parents">Họ tên phụ huynh<sup>*</sup></label>
+            <input class="grid-item" type="text" id="parents" required/>
+            <label class="grid-item" for="phone">SĐT phụ huynh<sup>*</sup></label>
+            <input class="grid-item" type="tel" id="phone"/>
+            <label class="grid-item" for="note">Ghi chú</label>
+            <input class="grid-item" type="text" id="note"/>
+            <button type="submit" onclick="clickBtSubmit()">Submit</button>
+        </div>
+    </fieldset>
+</form>
+<script>
+    let studentList;
 
-  </script>
+    function clickBtSubmit() {
+        if (
+            document.getElementById("name").value === "" &&
+            document.getElementById("name").value === "" &&
+            document.getElementById("address").value === "" &&
+            document.getElementById("parents").value === " " &&
+            document.getElementById("phone").value === ""
+        ) {
+            alert("Hãy nhập họ tên")
+        } else {
+            var dob = document.getElementById("dob").value + "/" + document.getElementById("mob").value + "/" + document.getElementById("yob").value
+            var name = document.getElementById("name").value
+            var address = document.getElementById("address").value
+            var parents = document.getElementById("parents").value
+            var phone = document.getElementById("phone").value
+            var note = document.getElementById("note").value
+
+            // let genderDOMs = document.getElementsByName("gender")
+            // for (let i = 0; i < genderDOMs.length; i++) {
+            //     if (genderDOMs[i].checked) var gender = genderDOMs[i].value
+            // }
+
+            let gender = document.querySelector('input[name="gender"]:checked').value
+            let student = new Student(name, dob, gender, address, parents, phone, note);
+
+            if (!localStorage.getItem(KEY_STUDENT_LIST)) {
+                studentList = []
+            } else {
+                studentList = JSON.parse(localStorage.getItem(KEY_STUDENT_LIST))
+            }
+
+            studentList.push(student);
+            localStorage.setItem(KEY_STUDENT_LIST, JSON.stringify(studentList));
+            alert('Register successfully');
+            window.close()
+        }
+    }
+
+</script>
 </body>
 
 </html>
