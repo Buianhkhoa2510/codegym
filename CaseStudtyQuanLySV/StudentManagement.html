@@ -12,40 +12,55 @@
 </head>
 
 <body>
-    <table>
-        <tr>
-            <th>Quản lý học viên lớp Ban Mai</th>
-            <td>Sĩ số lớp: </td>
-            <td id="sum"></td>
-            <th>
-                <a href="FormRegister.html" target="_blank">Add</a>
-            </th>
-        </tr>
-    </table>
-    <table border="1">
-        <thead>
-            <th>TT</th>
-            <th>Họ và tên</th>
-            <th>Ngày sinh</th>
-            <th>Giới tính</th>
-            <th>Địa chỉ</th>
-            <th>Họ tên phụ huynh</th>
-            <th>SĐT phụ huynh</th>
-            <th>Ghi chú</th>
-            <th>Sửa</th>
-            <th>Xoá</th>
-        </thead>
-        <tbody id="data"></tbody>
-    </table>
-    <script>
-        let lopBanMai = new LopBanMai()
-        show()
-        function show() {
-            getStudentFromLocal()
-            let students = lopBanMai.getStudents()
-            let str = "";
-            for (let i = 0; i < students.length; i++) {
-                str += `
+<table>
+    <tr>
+        <th>Quản lý học viên lớp Ban Mai</th>
+        <td>Sĩ số lớp:</td>
+        <td id="sum"></td>
+        <th>
+            <a href="FormRegister.html" target="_blank">Add</a>
+        </th>
+    </tr>
+</table>
+<table border="1">
+    <thead>
+    <th>TT</th>
+    <th>Họ và tên</th>
+    <th>Ngày sinh</th>
+    <th>Giới tính</th>
+    <th>Địa chỉ</th>
+    <th>Họ tên phụ huynh</th>
+    <th>SĐT phụ huynh</th>
+    <th>Ghi chú</th>
+    <th>Sửa</th>
+    <th>Xoá</th>
+    </thead>
+    <tbody id="data"></tbody>
+</table>
+<script>
+    let lopBanMai = new LopBanMai();
+
+    function initData() {
+        lopBanMai.addStudent(new Student("name_1", "12/12/1992", "female", "address", "parents", "phone", "note"))
+        lopBanMai.addStudent(new Student("name_2", "12/12/1992", "female", "address", "parents", "phone", "note"))
+        lopBanMai.addStudent(new Student("name_3", "12/12/1992", "female", "address", "parents", "phone", "note"))
+        lopBanMai.addStudent(new Student("name_4", "12/12/1992", "female", "address", "parents", "phone", "note"))
+        lopBanMai.addStudent(new Student("name_5", "12/12/1992", "female", "address", "parents", "phone", "note"))
+        lopBanMai.addStudent(new Student("name_6", "12/12/1992", "female", "address", "parents", "phone", "note"))
+        lopBanMai.addStudent(new Student("name_7", "12/12/1992", "female", "address", "parents", "phone", "note"))
+        lopBanMai.addStudent(new Student("name_8", "12/12/1992", "female", "address", "parents", "phone", "note"))
+        lopBanMai.addStudent(new Student("name_9", "12/12/1992", "female", "address", "parents", "phone9", "note"))
+        localStorage.setItem(KEY_STUDENT_LIST, JSON.stringify(lopBanMai.students));
+    }
+
+    show()
+
+    function show() {
+        getStudentFromLocal()
+        let students = lopBanMai.getStudents()
+        let str = "";
+        for (let i = 0; i < students.length; i++) {
+            str += `
             <tr>
                 <td>${i + 1}</td>
                 <td>${students[i].name}</td>
@@ -65,28 +80,30 @@
         document.getElementById("sum").innerText = students.length
     }
 
-        function getStudentFromLocal() {
-            if (localStorage.getItem(KEY_STUDENT_LIST)) {
-                lopBanMai.setStudents(JSON.parse(localStorage.getItem(KEY_STUDENT_LIST)))
-            } else lopBanMai.setStudents([])
+    function getStudentFromLocal() {
+        if (localStorage.getItem(KEY_STUDENT_LIST)) {
+            lopBanMai.setStudents(JSON.parse(localStorage.getItem(KEY_STUDENT_LIST)))
+        } else {
+            initData()
         }
+    }
 
-        function redirectEdit(index) {
-            getStudentFromLocal()
-            let students = lopBanMai.getStudents()
-            localStorage.setItem("studentEdit", JSON.stringify(students[index]))
-            window.location.href = "FormEdit.html"
-        }
+    function redirectEdit(index) {
+        getStudentFromLocal()
+        let students = lopBanMai.getStudents()
+        localStorage.setItem(KEY_STUDENT_EDIT, JSON.stringify(students[index]))
+        window.location.href = "FormEdit.html"
+    }
 
-        function deleteList(id) {
-            getStudentFromLocal();
-            let students = lopBanMai.getStudents()
-            students.splice(id, 1);
-            localStorage.setItem(KEY_STUDENT_LIST, JSON.stringify(students));
-            show();
-        }
+    function deleteList(id) {
+        getStudentFromLocal();
+        let students = lopBanMai.getStudents()
+        students.splice(id, 1);
+        localStorage.setItem(KEY_STUDENT_LIST, JSON.stringify(students));
+        show();
+    }
 
-    </script>
+</script>
 </script>
 </body>
 
