@@ -1,20 +1,19 @@
 class Student{
-    constructor(no, name, dob, male, address, parents, phone, note){
-        this.no = no
+    constructor( name, dob, gender, address, parents, phone, note){
         this.name = name
         this.dob = dob
-        this.male = male
+        this.gender = gender
         this.address = address
         this.parents = parents
         this.phone = phone
         this.note = note
     }
-    getNo(){
-return this.no
-    }
-    setNo(){
-this.no = no 
-    }
+//     getNo(){
+// return this.no
+//     }
+//     setNo(){
+// this.no = no 
+    // }
     getName(){
 return this.name
     }
@@ -27,11 +26,11 @@ return this.dob
     setDob(){
 this.dob = dob
     }
-    getMale(){
-return this.male
+    getGender(){
+return this.gender
     }
-    setMale(){
-this.male = male
+    setGender(){
+this.gender =gender
     }
     getAddress(){
 return this.address
