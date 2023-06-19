@@ -8,6 +8,7 @@
     <title>Document</title>
     <script src="/CaseStudtyQuanLySV/Student.js"></script>
     <script src="/CaseStudtyQuanLySV/BanMaiClass.js"></script>
+    <script src="/CaseStudtyQuanLySV/const.js"></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
             <td>Sĩ số lớp: </td>
             <td id="sum"></td>
             <th>
-                <button id="btnAdd" onclick="clickBtnAdd()">Add</button>
+                <a href="FormRegister.html" target="_blank">Add</a>
             </th>
         </tr>
     </table>
@@ -38,37 +39,54 @@
     </table>
     <script>
         let lopBanMai = new LopBanMai()
-        let student = new Student();
-        student = JSON.parse(localStorage.getItem('listStudents'))
-        lopBanMai.addStudent(student);
-        if ( typeof(Storage) !== 'undefined') {
         show()
-        }
-        function clickBtnAdd() {
-            var redirectWindow = window.open('http://127.0.0.1:5500/CaseStudtyQuanLySV/FormRegister.html', '_blank');
-            redirectWindow.location;
-        }
+        // function clickBtnAdd() {
+        //     window.location.href = "FormRegister.html"
+        // }
+
         function show() {
+            getStudentFromLocal()
             let students = lopBanMai.getStudents()
             let str = "";
             for (let i = 0; i < students.length; i++) {
                 str += `
             <tr>
                 <td>${i + 1}</td>
-                <td>${students[i].getName()}</td>
-                <td>${students[i].getDob()}</td>
-                <td>${students[i].getGender()}</td>
-                <td>${students[i].getAddress()}</td>
-                <td>${students[i].getParents()}</td>
-                <td>${students[i].getPhone()}</td>
-                <td>${students[i].getNote()}</td>
-                <td><button type="button" onclick="edit()">Edit</button></td>
-                <td><button type="button" onclick="delete()">Delete</button></td>
+                <td>${students[i].name}</td>
+                <td>${students[i].dob}</td>
+                <td>${students[i].gender}</td>
+                <td>${students[i].address}</td>
+                <td>${students[i].parents}</td>
+                <td>${students[i].phone}</td>
+                <td>${students[i].note}</td>
+                <td><button type="button" onclick="redirectEdit(${i})"">Edit ${i + 1}</button></td>
+                <td><button type="button"onclick="deleteList(${i})">Delete ${i + 1}</button></td>
             </tr>
             `
             }
             document.getElementById("data").innerHTML = str
             document.getElementById("sum").innerText = students.length
+        }
+
+        function getStudentFromLocal() {
+            if (localStorage.getItem(KEY_STUDENT_LIST)) {
+                lopBanMai.setStudents(JSON.parse(localStorage.getItem(KEY_STUDENT_LIST)))
+            } else lopBanMai.setStudents([])
+        }
+
+        function redirectEdit(index) {
+            getStudentFromLocal()
+            let students = lopBanMai.getStudents()
+            localStorage.setItem("studentEdit", JSON.stringify(students[index]))
+            window.location.href = "FormEdit.html"
+        }
+
+        function deleteList(id) {
+            getStudentFromLocal();
+            let students = lopBanMai.getStudents()
+            students.splice(id, 1);
+            localStorage.setItem(KEY_STUDENT_LIST, JSON.stringify(students));
+            show();
         }
 
     </script>

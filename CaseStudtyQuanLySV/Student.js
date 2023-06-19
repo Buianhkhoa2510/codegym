@@ -57,6 +57,6 @@ return this.note
 this.note = note 
     }
     editStudent(){
-        window.location.href="http://127.0.0.1:5500/CaseStudtyQuanLySV/FormEdit.html"
+        window.location.href="FormEdit.html"
     }
 }

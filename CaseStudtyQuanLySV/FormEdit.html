@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script src="Student.js"></script>
+    <script src="BanMaiClass.js"></script>
     <title>Đăng ký thông tin</title>
     <style>
       form {
@@ -170,9 +172,53 @@
           <input class="grid-item" type="tel" id="phone" />
           <label class="grid-item" for="note">Ghi chú</label>
           <input class="grid-item" type="text" id="note" required />
-          <button type="update">Update</button>
-          <button type="cancle">Cancle</button>
+          <button type="update" onclick="editStudent()" >Update</button>
+          <button type="cancle"  onclick="cancelStudent()">Cancle</button>
       </fieldset>
+      <script>
+      let studentsList = [];
+      let studentEdit = JSON.parse(localStorage.getItem("studentEdit"))
+      showStudentEdit()
+      function getStudents() {
+          if (JSON.parse(localStorage.getItem("students")) == null) {
+              studentsList = []
+          } else {
+              studentsList = JSON.parse(localStorage.getItem("students"))
+          }
+      }
+      function showStudentEdit() {
+          document.getElementById("name").value = studentEdit.name
+          document.getElementById("dob").value = studentEdit.dob
+          document.getElementById("parents").value = studentEdit.parents
+          document.getElementById("address").value = studentEdit.address
+          document.getElementById("phone").value = studentEdit.phone
+          document.getElementById("note").value = studentEdit.note
+      
+          let genderDOM = document.getElementsByName("gender")
+          for (let i = 0; i < genderDOM.length; i++) {
+              if (genderDOM[i].value == studentEdit.gender) genderDOM[i].checked = true
+          }
+      }
+      
+      function editStudent() {
+          getStudents()
+          studentEdit.name = document.getElementById("name").value
+          studentEdit.parents = document.getElementById("parents").value
+          studentEdit.phone = document.getElementById("phone").value
+          studentEdit.address = document.getElementById("address").value
+          studentEdit.gender = document.querySelector('input[name="gender"]:checked').value
+          for (let i = 0; i < studentsList.length; i++) {
+              if (studentsList[i].msv == studentEdit.msv){
+                  studentsList.splice(i, 1, studentEdit)
+              }
+          }
+          localStorage.setItem("students", JSON.stringify(studentsList))
+          window.location.href="index.html"
+      }
+      function cancelStudent() {
+          window.close()
+      }
+    </script>
     </form>
   </body>
 </html>

@@ -5,13 +5,13 @@ class LopBanMai {
     getStudents() {
         return this.students
     }
-    setStudents() {
-        this.students = this.students
+    setStudents(_students) {
+        this.students = _students
     }
     addStudent(student) {
         this.students.push(student)
     }
-    // deleteStudent(student) {
-    //
+    // deleteStudent(student){
+
     // }
 }
