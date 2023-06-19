@@ -1,62 +1,69 @@
-class Student{
-    constructor( name, dob, gender, address, parents, phone, note){
-        this.name = name
-        this.dob = dob
-        this.gender = gender
-        this.address = address
-        this.parents = parents
-        this.phone = phone
-        this.note = note
+class Student {
+    constructor(name, dob, gender, address, parents, phone, note) {
+        this._name = name;
+        this._dob = dob;
+        this._gender = gender;
+        this._address = address;
+        this._parents = parents;
+        this._phone = phone;
+        this._note = note;
     }
-//     getNo(){
-// return this.no
-//     }
-//     setNo(){
-// this.no = no 
-    // }
     getName(){
 return this.name
     }
-    setName(){
- this.name = name
+
+    set name(value) {
+        this._name = value;
     }
-    getDob(){
-return this.dob
+
+    get dob() {
+        return this._dob;
     }
-    setDob(){
-this.dob = dob
+
+    set dob(value) {
+        this._dob = value;
     }
-    getGender(){
-return this.gender
+
+    get gender() {
+        return this._gender;
     }
-    setGender(){
-this.gender =gender
+
+    set gender(value) {
+        this._gender = value;
     }
-    getAddress(){
-return this.address
+
+    get address() {
+        return this._address;
     }
-    setAddress(){
-this.address = address
+
+    set address(value) {
+        this._address = value;
     }
-    getParents(){
-return this.parents
+
+    get parents() {
+        return this._parents;
     }
-    setParents(){
-this.parents = parents 
+
+    set parents(value) {
+        this._parents = value;
     }
-    getPhone(){
-return this.phone 
+
+    get phone() {
+        return this._phone;
     }
-    setPhone(){
-this.phone = phone 
+
+    set phone(value) {
+        this._phone = value;
     }
-    getNote(){
-return this.note 
+
+    get note() {
+        return this._note;
     }
-    setNote(){
-this.note = note 
+
+    set note(value) {
+        this._note = value;
     }
-    editStudent(){
-        window.location.href="FormEdit.html"
+    editStudent() {
+        window.location.href = "http://127.0.0.1:5500/CaseStudtyQuanLySV/FormEdit.html"
     }
 }

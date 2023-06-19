@@ -40,10 +40,6 @@
     <script>
         let lopBanMai = new LopBanMai()
         show()
-        // function clickBtnAdd() {
-        //     window.location.href = "FormRegister.html"
-        // }
-
         function show() {
             getStudentFromLocal()
             let students = lopBanMai.getStudents()
@@ -61,12 +57,13 @@
                 <td>${students[i].note}</td>
                 <td><button type="button" onclick="redirectEdit(${i})"">Edit ${i + 1}</button></td>
                 <td><button type="button"onclick="deleteList(${i})">Delete ${i + 1}</button></td>
+
             </tr>
             `
-            }
-            document.getElementById("data").innerHTML = str
-            document.getElementById("sum").innerText = students.length
         }
+        document.getElementById("data").innerHTML = str
+        document.getElementById("sum").innerText = students.length
+    }
 
         function getStudentFromLocal() {
             if (localStorage.getItem(KEY_STUDENT_LIST)) {
@@ -90,6 +87,7 @@
         }
 
     </script>
+</script>
 </body>
 
 </html>

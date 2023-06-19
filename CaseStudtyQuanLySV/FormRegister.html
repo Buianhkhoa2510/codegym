@@ -212,8 +212,13 @@
             var parents = document.getElementById("parents").value
             var phone = document.getElementById("phone").value
             var note = document.getElementById("note").value
+
+            // let genderDOMs = document.getElementsByName("gender")
+            // for (let i = 0; i < genderDOMs.length; i++) {
+            //     if (genderDOMs[i].checked) var gender = genderDOMs[i].value
+            // }
+
             let gender = document.querySelector('input[name="gender"]:checked').value
-            
             let student = new Student(name, dob, gender, address, parents, phone, note);
 
             if (!localStorage.getItem(KEY_STUDENT_LIST)) {
@@ -221,6 +226,7 @@
             } else {
                 studentList = JSON.parse(localStorage.getItem(KEY_STUDENT_LIST))
             }
+
             studentList.push(student);
             localStorage.setItem(KEY_STUDENT_LIST, JSON.stringify(studentList));
             alert('Register successfully');

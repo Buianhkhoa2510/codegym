@@ -164,7 +164,7 @@
             <label for="female">Nữ</label>
           </div>
           <label class="grid-item" for="Address">Địa chỉ<sup>*</sup></label>
-          <input class="grid-item" type="text" id="Address" required />
+          <input class="grid-item" type="text" id="address" required />
           <label class="grid-item" for="parents">Họ tên phụ huynh<sup>*</sup></label>
           <input class="grid-item" type="text" id="parents" required />
           <label class="grid-item" for="phone"
@@ -201,19 +201,28 @@
       }
       
       function editStudent() {
+        // var dob = document.getElementById("dob").value + "/" + document.getElementById("mob").value + "/" + document.getElementById("yob").value
+        //     var name = document.getElementById("name").value
+        //     var address = document.getElementById("address").value
+        //     var parents = document.getElementById("parents").value
+        //     var phone = document.getElementById("phone").value
+        //     var note = document.getElementById("note").value
+        //     let gender = document.querySelector('input[name="gender"]:checked').value
+        
           getStudents()
           studentEdit.name = document.getElementById("name").value
           studentEdit.parents = document.getElementById("parents").value
           studentEdit.phone = document.getElementById("phone").value
           studentEdit.address = document.getElementById("address").value
+          studentEdit.note = document.getElementById("note").value
           studentEdit.gender = document.querySelector('input[name="gender"]:checked').value
           for (let i = 0; i < studentsList.length; i++) {
-              if (studentsList[i].msv == studentEdit.msv){
+              if (studentsList[i].phone == studentEdit.phone){
                   studentsList.splice(i, 1, studentEdit)
               }
           }
           localStorage.setItem("students", JSON.stringify(studentsList))
-          window.location.href="index.html"
+          window.location.href="StudentManagement.html"
       }
       function cancelStudent() {
           window.close()
