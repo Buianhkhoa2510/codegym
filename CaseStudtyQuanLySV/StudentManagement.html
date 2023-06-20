@@ -10,20 +10,19 @@
     <script src="/CaseStudtyQuanLySV/BanMaiClass.js"></script>
     <script src="/CaseStudtyQuanLySV/const.js"></script>
 </head>
-
 <body>
-<table>
+<table style="width: 800px;;height:90px;">
     <tr>
-        <th>Quản lý học viên lớp Ban Mai</th>
-        <td>Sĩ số lớp:</td>
-        <td id="sum"></td>
+        <th style="color: red; text-transform: uppercase;">Quản lý học viên lớp Ban Mai</th>
+        <td style="width: 70px;">Sĩ số lớp:</td>
+        <td style="width: 5px;" id="sum"></td>
         <th>
-            <a href="FormRegister.html" target="_blank">Add</a>
+            <a href="FormRegister.html" target="_blank" > <img src="/img/outline_supervisor_account_black_24dp.png" width="20px" height="20px">Thêm học viên</a>
         </th>
     </tr>
 </table>
-<table border="1">
-    <thead>
+<table border="1"  style="width: 800px;;height:90px;">
+    <thead style="background-color: aquamarine;">
     <th>TT</th>
     <th>Họ và tên</th>
     <th>Ngày sinh</th>
@@ -41,15 +40,15 @@
     let lopBanMai = new LopBanMai();
 
     function initData() {
-        lopBanMai.addStudent(new Student("name_1", "12/12/1992", "female", "address", "parents", "phone", "note"))
-        lopBanMai.addStudent(new Student("name_2", "12/12/1992", "female", "address", "parents", "phone", "note"))
-        lopBanMai.addStudent(new Student("name_3", "12/12/1992", "female", "address", "parents", "phone", "note"))
-        lopBanMai.addStudent(new Student("name_4", "12/12/1992", "female", "address", "parents", "phone", "note"))
-        lopBanMai.addStudent(new Student("name_5", "12/12/1992", "female", "address", "parents", "phone", "note"))
-        lopBanMai.addStudent(new Student("name_6", "12/12/1992", "female", "address", "parents", "phone", "note"))
-        lopBanMai.addStudent(new Student("name_7", "12/12/1992", "female", "address", "parents", "phone", "note"))
-        lopBanMai.addStudent(new Student("name_8", "12/12/1992", "female", "address", "parents", "phone", "note"))
-        lopBanMai.addStudent(new Student("name_9", "12/12/1992", "female", "address", "parents", "phone9", "note"))
+        lopBanMai.addStudent(new Student("Bùi Anh Cơm", "25/10/2021", "female", "address", "parents", "phone1", "note"))
+        lopBanMai.addStudent(new Student("Bùi Anh Cơm", "25/10/2021", "female", "address", "parents", "phone2", "note"))
+        lopBanMai.addStudent(new Student("Bùi Anh Cơm", "25/10/2021", "female", "address", "parents", "phone3", "note"))
+        lopBanMai.addStudent(new Student("Bùi Anh Cơm", "25/10/2021", "female", "address", "parents", "phone4", "note"))
+        lopBanMai.addStudent(new Student("Bùi Anh Cơm", "25/10/2021", "female", "address", "parents", "phone5", "note"))
+        lopBanMai.addStudent(new Student("Bùi Anh Cơm", "25/10/2021", "female", "address", "parents", "phone6", "note"))
+        lopBanMai.addStudent(new Student("Bùi Anh Cơm", "25/10/2021", "female", "address", "parents", "phone7", "note"))
+        lopBanMai.addStudent(new Student("Bùi Anh Cơm", "25/10/2021", "female", "address", "parents", "phone8", "note"))
+        lopBanMai.addStudent(new Student("Bùi Anh Cơm", "25/10/2021", "female", "address", "parents", "phone9", "note"))
         localStorage.setItem(KEY_STUDENT_LIST, JSON.stringify(lopBanMai.students));
     }
 
@@ -70,8 +69,8 @@
                 <td>${students[i].parents}</td>
                 <td>${students[i].phone}</td>
                 <td>${students[i].note}</td>
-                <td><button type="button" onclick="redirectEdit(${i})"">Edit ${i + 1}</button></td>
-                <td><button type="button"onclick="deleteList(${i})">Delete ${i + 1}</button></td>
+                <td><button type="button" onclick="redirectEdit(${i})">Edit </button></td>
+                <td><button type="button"onclick="deleteList(${i})">Delete </button></td>
 
             </tr>
             `
@@ -96,11 +95,12 @@
     }
 
     function deleteList(id) {
+        if(confirm("Bạn có chắc chắn muốn xoá không") == true){ 
         getStudentFromLocal();
         let students = lopBanMai.getStudents()
         students.splice(id, 1);
         localStorage.setItem(KEY_STUDENT_LIST, JSON.stringify(students));
-        show();
+        show();}
     }
 
 </script>
